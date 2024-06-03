@@ -1,22 +1,36 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import Theme from "./plugins/theme";
-import Router from "./plugins/router";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import "./mock"; // 请求拦截模拟接口 mockjs
-import "assets/style"; // 基础样式
-
+import { Router } from "./plugins/router";
+import "%/style/index";
+import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material";
 const el = document.getElementById("root") as Element;
-
+import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
 const root = createRoot(el);
+
+const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          main: "#efaa33",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#f30606",
+        },
+      },
+    },
+  },
+  // ...other properties
+});
 
 root.render(
   <React.StrictMode>
-    <Theme>
+    <CssVarsProvider>
       <Router />
-    </Theme>
+    </CssVarsProvider>
   </React.StrictMode>,
 );

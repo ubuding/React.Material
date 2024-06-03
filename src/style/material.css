@@ -1,0 +1,16 @@
+body {
+  background-color: var(--mui-palette-background-default);
+  color: var(--mui-palette-text-primary);
+  --mui-palette-primary-contrastText: #fff;
+}
+:root[data-mui-color-scheme="light"] {
+  --mui-palette-primary-main: #e9970a;
+  --mui-palette-primary-light: #e2d1b4;
+  --mui-palette-primary-dark: #dc8d06;
+}
+
+:root[data-mui-color-scheme="dark"] {
+  --mui-palette-primary-main: #f30606;
+  --mui-palette-primary-light: #f1c2c2;
+  --mui-palette-primary-dark: #d30606;
+}

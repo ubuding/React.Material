@@ -10,9 +10,7 @@ instance.interceptors.request.use(
     return config;
   },
   function (error) {
-    message.error({
-      content: "请求错误!",
-    });
+    // message.error("请求错误!");
     return Promise.reject(error);
   },
 );
@@ -28,7 +26,7 @@ instance.interceptors.response.use(
     const { status } = response;
     if (status === 200) return data;
 
-    message.error("请求错误!");
+    // message.error("请求错误!");
     console.error(response);
     return Promise.reject(new Error("请求失败!"));
   },
@@ -40,15 +38,15 @@ instance.interceptors.response.use(
     // 接口 状态
     switch (status) {
       case 400:
-        message.error("400请求失败!");
+        // message.error("400请求失败!");
         break;
 
       case 404:
-        message.error("404接口地址错误!");
+        //  message.error("404接口地址错误!");
         break;
 
       case 500:
-        message.error("服务器错误!");
+        //  message.error("服务器错误!");
         break;
     }
     return Promise.reject(error);

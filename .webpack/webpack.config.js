@@ -3,17 +3,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 将 CSS 提取到单独的文件中，为每个包含 CSS 的 JS 文件创建一个 CSS 文件，并且支持 CSS 和 SourceMaps 的按需加载
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// 不会重复创建标签页
-const openBrowser = require("react-dev-utils/openBrowser");
-// ant design
-const antd_icons = require("../src/constant/antd-icons.js");
-const antd_components = require("../src/constant/antd-components.js");
 
 module.exports = (env) => {
   return {
     devServer: {
-      host: "127.0.0.1",
-      port: 3000,
+      // host: "127.0.0.1",
+      // port: 3000,
       open: true,
       proxy: {
         "/nrgtproxy": {
@@ -81,7 +76,7 @@ module.exports = (env) => {
                 importLoaders: 2,
               },
             },
-            "postcss-loader",
+            // "postcss-loader",
             "sass-loader",
           ],
         },
@@ -129,46 +124,12 @@ module.exports = (env) => {
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js", ".css", ".scss"],
       alias: {
+        "%": path.resolve(__dirname, "../src"),
         "@": path.resolve(__dirname, "../src/modules"),
         "#": path.resolve(__dirname, "../src/components"),
-        constant: path.resolve(__dirname, "../src/constant"),
-        assets: path.resolve(__dirname, "../src/assets"),
-        utils: path.resolve(__dirname, "../src/utils"),
       },
     },
     plugins: [
-      // 自动导入
-      require("unplugin-auto-import/webpack").default({
-        include: [/\.[tj]sx?$/],
-        imports: [
-          "react",
-          "react-router-dom",
-          {
-            antd: antd_components,
-            "@ant-design/icons": antd_icons,
-          },
-        ],
-        dirs: [
-          "src/hooks" /**      */ /** 个性化支持 */,
-          "src/modules/**/store.ts" /**  */ /** 模块Store */,
-        ],
-        dts: "@types/auto-imports.d.ts",
-        eslintrc: {
-          enabled: true,
-          filepath: "@types/auto-imports.json",
-          globalsPropValue: true,
-        },
-        // resolvers: [
-        //   (name) => {
-        //     if (antds.includes(name)) {
-        //       return {
-        //         name,
-        //         from: "antd",
-        //       };
-        //     }
-        //   },
-        // ],
-      }),
       new HtmlWebpackPlugin({
         template: "./index.html",
         minify: {

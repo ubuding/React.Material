@@ -1,0 +1,53 @@
+/* 视口大小 START */
+html,
+body,
+body #root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 字体 START */
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  src: url("/public/fonts/Orbitron-ExtraBold.ttf");
+}
+
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Orbitron" !important;
+}
+
+/* 滚动条 START */
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000;
+  border-radius: 10px;
+}

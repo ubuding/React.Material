@@ -7,7 +7,6 @@
     "es2021": true,
   },
   "extends": [
-    "./@types/auto-imports.json",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",

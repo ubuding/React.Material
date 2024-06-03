@@ -1,10 +1,7 @@
+import { lazy } from "react";
 export default [
   {
-    meta: {
-      code: "home",
-      icon: "HomeOutlined",
-    },
-    path: "/home",
+    path: "/",
     Component: lazy(() => import("@/home/pages")),
   },
 ];
