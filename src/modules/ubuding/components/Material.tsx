@@ -9,13 +9,15 @@ import {
   Pagination,
   Chip,
   Button,
+  Toolbar,
+  AppBar,
+  Typography,
 } from "@mui/material";
-import { Add, Search } from "@mui/icons-material";
+import { Add, Menu, Search } from "@mui/icons-material";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import React from "react";
-import "./style.scss";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 export const Material = () => {
@@ -95,13 +97,13 @@ export const Material = () => {
   ];
 
   return (
-    <div className="ubuding-material-component">
-      <div className="tool-block">
+    <div className="flex flex-col h-[50vh] overflow-hidden">
+      <div className="flex justify-between">
         <Button variant="text">
           <Add />
           Create
         </Button>
-        <div className="search-tool">
+        <div className="flex border-b-[1px] border-[var(--mui-palette-grey-500)]">
           <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search Table" />
           <IconButton type="button" aria-label="search">
             <Search />
@@ -112,7 +114,7 @@ export const Material = () => {
           </IconButton>
         </div>
       </div>
-      <div className="table-wrap">
+      <div className="flex flex-1 overflow-hidden overflow-y-scroll">
         <TableContainer component={Paper}>
           <Table stickyHeader aria-label="simple table">
             <TableHead>
@@ -143,7 +145,7 @@ export const Material = () => {
           </Table>
         </TableContainer>
       </div>
-      <div className="pagination-block">
+      <div className="flex justify-between p-[6px] items-center">
         <Chip label="total: 1000" variant="outlined" />
 
         <Pagination count={10} showFirstButton showLastButton />

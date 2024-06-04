@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs, Tab } from "@mui/material";
 import { Material } from "@/ubuding/components/Material";
+import { Charts } from "@/ubuding/components/Charts";
 import "./style.scss";
 export default function Ubuding() {
   const [value, setValue] = React.useState("Material");
@@ -20,7 +21,7 @@ export default function Ubuding() {
         <Tab value="Material" label="Material Components" />
         <Tab value="Waterfall" label="Waterfall List" />
       </Tabs>
-
+      <Charts />
       <Material />
     </div>
   );

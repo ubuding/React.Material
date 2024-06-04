@@ -76,7 +76,7 @@ module.exports = (env) => {
                 importLoaders: 2,
               },
             },
-            // "postcss-loader",
+            "postcss-loader",
             "sass-loader",
           ],
         },

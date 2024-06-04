@@ -1,8 +1,11 @@
 import {
+  AppBar,
   Avatar,
   Badge,
   Divider,
+  IconButton,
   Menu,
+  Toolbar,
   Tooltip,
   useColorScheme,
 } from "@mui/material";
@@ -11,48 +14,53 @@ import {
   Brightness4,
   Brightness7,
   GTranslate,
+  Menu as MenuIcon,
 } from "@mui/icons-material";
 import React from "react";
-import "./style.scss";
+import { useNavigate } from "react-router-dom";
 export const TopBar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const { mode, setMode } = useColorScheme();
+  const navigate = useNavigate();
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   return (
-    <div className="modules-layout-topbar">
-      <div className="content">
-        <div className="label">React.Material</div>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton color="inherit">
+          <MenuIcon />
+        </IconButton>
+        {/* <Chip
+          label="React.Material"
+          className="text-[var(--mui-palette-primary-contrastText)]"
+        /> */}
+        <div
+          className="mr-[auto] text-[18px] cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          React.Material
+        </div>
         <Tooltip title="More Settings">
-          <div className="user-wrap" onClick={handleClick}>
+          <div
+            className="flex items-center cursor-pointer "
+            onClick={handleClick}
+          >
             <Avatar
               alt="Natacha"
               src="/public/images/logo.png"
               sx={{ width: 36, height: 36 }}
             />
-            <div className="user">ubuding</div>
-            {/* <Chip
-            size="medium"
-            avatar={
-              <Avatar
-                alt="Natacha"
-                src="/public/images/logo.png"
-                sx={{ width: 56, height: 56 }}
-              />
-            }
-            label="ubuding"
-            variant="outlined"
-          /> */}
+            <div className="ml-[6px]">ubuding</div>
           </div>
         </Tooltip>
         <Menu
-          className="user-menu"
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
@@ -60,40 +68,40 @@ export const TopBar = () => {
             vertical: -6,
             horizontal: 0,
           }}
+          className="cursor-pointer pt-[0px] pb-[0px]"
         >
           <div
-            className="menu-item"
+            className="flex items-center p-[6px] w-[120px] h-[36px] hover:bg-[var(--mui-palette-action-hover)]"
             onClick={() => {
               window.open("https://github.com/ubuding", "_blank");
               setAnchorEl(null);
             }}
           >
-            <GitHub className="icon" />
+            <GitHub className="mr-[6px]" />
             Github
           </div>
           <Divider />
           <div
-            className="menu-item"
+            className="flex items-center p-[6px] w-[120px] h-[36px] hover:bg-[var(--mui-palette-action-hover)]"
             onClick={() => {
               setAnchorEl(null);
             }}
           >
-            <GTranslate className="icon" />
+            <GTranslate className="mr-[6px]" />
             i18n
           </div>
           <Divider />
-
           <div
-            className="menu-item"
+            className="flex items-center p-[6px] w-[120px] h-[36px] hover:bg-[var(--mui-palette-action-hover)]"
             onClick={() => {
               setMode(mode === "light" ? "dark" : "light");
               setAnchorEl(null);
             }}
           >
             {mode === "light" ? (
-              <Brightness4 className="icon" />
+              <Brightness4 className="mr-[6px]" />
             ) : (
-              <Brightness7 className="icon" />
+              <Brightness7 className="mr-[6px]" />
             )}
             <Badge
               variant="dot"
@@ -107,8 +115,7 @@ export const TopBar = () => {
             </Badge>
           </div>
         </Menu>
-      </div>
-      <Divider />
-    </div>
+      </Toolbar>
+    </AppBar>
   );
 };
