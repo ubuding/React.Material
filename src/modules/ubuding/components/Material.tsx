@@ -26,7 +26,7 @@ export const Material = () => {
     calories: number,
     fat: number,
     carbs: number,
-    protein: number,
+    protein: number
   ) {
     return { name, calories, fat, carbs, protein };
   }
@@ -97,7 +97,7 @@ export const Material = () => {
   ];
 
   return (
-    <div className="flex flex-col h-[50vh] overflow-hidden">
+    <div className="flex flex-col h-[50vh] overflow-hidden flex-shrink-0">
       <div className="flex justify-between">
         <Button variant="text">
           <Add />

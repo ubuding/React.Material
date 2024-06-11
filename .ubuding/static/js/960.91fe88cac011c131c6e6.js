@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkReact_Material=self.webpackChunkReact_Material||[]).push([[960],{8960:(e,a,t)=>{t.r(a),t.d(a,{default:()=>u});var r=t(6540);function u(){return r.createElement("div",{className:"about-wrap"},"About")}}}]);

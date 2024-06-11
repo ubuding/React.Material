@@ -2,7 +2,6 @@ import React from "react";
 import { Tabs, Tab } from "@mui/material";
 import { Material } from "@/ubuding/components/Material";
 import { Charts } from "@/ubuding/components/Charts";
-import "./style.scss";
 export default function Ubuding() {
   const [value, setValue] = React.useState("Material");
 
@@ -10,14 +9,8 @@ export default function Ubuding() {
     setValue(newValue);
   };
   return (
-    <div className="ubuding-wrap">
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor="secondary"
-        indicatorColor="secondary"
-        aria-label="wrapped label tabs example"
-      >
+    <div className="w-full h-full flex flex-col overflow-hidden overflow-y-scroll">
+      <Tabs value={value} onChange={handleChange}>
         <Tab value="Material" label="Material Components" />
         <Tab value="Waterfall" label="Waterfall List" />
       </Tabs>

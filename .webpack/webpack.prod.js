@@ -1,15 +1,10 @@
 const path = require("path");
-// 压缩JS
 const TerserPlugin = require("terser-webpack-plugin");
-// 压缩CSS
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-// 复制文件 public
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-// Gzip 压缩文件
 const Gzip = require("compression-webpack-plugin");
-// 打包体积分析
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 module.exports = {
   mode: "production",
   output: {
@@ -26,7 +21,7 @@ module.exports = {
       ],
     }),
     new Gzip(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   optimization: {
     minimize: true,
@@ -45,7 +40,6 @@ module.exports = {
         },
       }),
     ],
-    // 切片
     // splitChunks: {
     //   minSize: 10000,
     //   cacheGroups: {

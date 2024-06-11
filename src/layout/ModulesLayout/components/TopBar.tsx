@@ -3,7 +3,6 @@ import {
   Avatar,
   Badge,
   Divider,
-  IconButton,
   Menu,
   Toolbar,
   Tooltip,
@@ -14,7 +13,6 @@ import {
   Brightness4,
   Brightness7,
   GTranslate,
-  Menu as MenuIcon,
 } from "@mui/icons-material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -32,15 +30,8 @@ export const TopBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton color="inherit">
-          <MenuIcon />
-        </IconButton>
-        {/* <Chip
-          label="React.Material"
-          className="text-[var(--mui-palette-primary-contrastText)]"
-        /> */}
         <div
-          className="mr-[auto] text-[18px] cursor-pointer"
+          className="mr-[auto] text-[26px] cursor-pointer"
           onClick={() => {
             navigate("/");
           }}

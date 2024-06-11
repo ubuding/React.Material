@@ -2,8 +2,8 @@ import { LineChart, PieChart } from "@mui/x-charts";
 import React from "react";
 export const Charts = () => {
   return (
-    <div className="w-[100%] flex flex-row">
-      <div className="w-[50%]">
+    <div className="w-[100%] flex flex-row justify-evenly my-3">
+      <div className="w-[40%] shadow-[0_0_10px_0_var(--mui-palette-grey-500)] rounded-xl p-3">
         <LineChart
           xAxis={[
             { data: ["2018", "2019", "2020", "2021", "2022", "2023", "2024"] },
@@ -16,7 +16,7 @@ export const Charts = () => {
           height={300}
         />
       </div>
-      <div className="w-[50%]">
+      <div className="w-[40%] shadow-[0_0_10px_0_var(--mui-palette-grey-500)] rounded-xl p-3 flex justify-center items-center">
         <PieChart
           slotProps={{
             legend: {
