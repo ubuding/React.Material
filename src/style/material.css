@@ -4,9 +4,9 @@ body {
   --mui-palette-primary-contrastText: #fff;
 }
 :root[data-mui-color-scheme="light"] {
-  --mui-palette-primary-main: #e9970a;
-  --mui-palette-primary-light: #e2d1b4;
-  --mui-palette-primary-dark: #dc8d06;
+  --mui-palette-primary-main: #0a7de9;
+  --mui-palette-primary-light: #b4d7e2;
+  --mui-palette-primary-dark: #0a7de9;
 }
 
 :root[data-mui-color-scheme="dark"] {

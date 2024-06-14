@@ -9,9 +9,12 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "%/*": ["./src/*"],
       "@/*": ["./src/modules/*"],
-      "#/*": ["./src/components/*"]
+      "#/*": ["./src/components/*"],
+      "i18n": ["./src/i18n.ts"],
+      "style/*": ["./src/style/*"],
+      "layout/*": ["./src/layout/*"],
+      "request": ["./src/request.ts"]
     },
     "types": ["node", "webpack-env"],
     "esModuleInterop": true,

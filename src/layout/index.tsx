@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { RootLayout } from "%/layout/RootLayout";
-import { ModulesLayout } from "%/layout/ModulesLayout";
+import { RootLayout } from "layout/RootLayout";
+import { ModulesLayout } from "layout/ModulesLayout";
 
 export default function Layout() {
   const location = useLocation();

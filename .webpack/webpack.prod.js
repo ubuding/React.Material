@@ -3,8 +3,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const Gzip = require("compression-webpack-plugin");
-// const BundleAnalyzerPlugin =
-//   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 module.exports = {
   mode: "production",
   output: {
@@ -21,7 +19,6 @@ module.exports = {
       ],
     }),
     new Gzip(),
-    // new BundleAnalyzerPlugin(),
   ],
   optimization: {
     minimize: true,

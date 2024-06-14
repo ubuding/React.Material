@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
   return {
-    entry: "./src/index.tsx",
+    entry: "./src/main.tsx",
     output: {
       filename: "[name].[contenthash].js",
       path: path.resolve(__dirname, "../.ubuding"),
@@ -79,13 +79,15 @@ module.exports = (env) => {
         },
       ],
     },
-    // 路径别名
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
       alias: {
-        "%": path.resolve(__dirname, "../src"),
         "@": path.resolve(__dirname, "../src/modules"),
         "#": path.resolve(__dirname, "../src/components"),
+        i18n: path.resolve(__dirname, "../src/i18n.ts"),
+        style: path.resolve(__dirname, "../src/style"),
+        layout: path.resolve(__dirname, "../src/layout"),
+        request: path.resolve(__dirname, "../src/request.ts"),
       },
     },
     plugins: [
