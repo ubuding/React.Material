@@ -4,7 +4,7 @@ const data = {
   count: atom<number>(0),
 };
 
-export const useRobotStore = (key: keyof Data) => {
+export const useRExampleStore = (key: keyof Data) => {
   return useAtom(data[key]);
 };
 
