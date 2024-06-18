@@ -1,9 +1,6 @@
 {
-  "introduction": "一个完整的前端框架",
-  "operate": {
-    "query": "查询"
-  },
-  "form": {
-    "prev": "上一页"
+  "name": "React",
+  "ui": {
+    "name": "Material"
   }
 }

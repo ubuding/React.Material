@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: "/",
+  baseURL: "",
   timeout: 60000,
 });
 
@@ -21,6 +21,7 @@ instance.interceptors.response.use(
     return Promise.reject(new Error("请求失败!"));
   },
   function (error) {
+    console.error(error.code);
     return Promise.reject(error);
   }
 );

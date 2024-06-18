@@ -14,7 +14,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "../public"),
-          to: path.resolve(__dirname, "../dist/public"),
+          to: path.resolve(__dirname, "../.ubuding/public"),
         },
       ],
     }),
@@ -37,22 +37,5 @@ module.exports = {
         },
       }),
     ],
-    // splitChunks: {
-    //   minSize: 10000,
-    //   cacheGroups: {
-    //     // react: {
-    //     //   chunks: "all",
-    //     //   test: /[\\/]node_modules[\\/].*react(.*)/,
-    //     //   priority: 80,
-    //     //   name: "react",
-    //     // },
-    //     // lodash: {
-    //     //   chunks: "all",
-    //     //   test: /[\\/]node_modules[\\/].*lodash(.*)/,
-    //     //   priority: 80,
-    //     //   name: "lodash",
-    //     // },
-    //   },
-    // },
   },
 };

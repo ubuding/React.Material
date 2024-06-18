@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Divider, Menu, useColorScheme } from "@mui/material";
 import { useTranslation } from "i18n";
 import { useLocales } from "i18n";
-export default function Overview({ children }: any) {
+import { getHistory } from "@/overview/service";
+export default function Overview() {
+  useEffect(() => {
+    getHistory();
+  }, []);
+
   const [t] = useTranslation();
   const [, setLocales] = useLocales();
   const { mode, setMode } = useColorScheme();
@@ -100,14 +105,14 @@ export default function Overview({ children }: any) {
     >
       <div className="h-fit mt-5 mr-3 flex flex-row-reverse items-center z-10">
         <div
-          className="w-8 h-8 mx-3 bg-cover cursor-pointer bg-[url('layout/RootLayout/Overview/images/start.png')] animate-pulse"
+          className="w-8 h-8 mx-3 bg-cover cursor-pointer bg-[url('@/overview/images/start.png')] animate-pulse"
           onClick={() => {
             setMode(mode === "light" ? "dark" : "light");
           }}
         ></div>
 
         <div
-          className="w-[26px] h-8 mx-3 bg-cover cursor-pointer bg-[url('layout/RootLayout/Overview/images/fire.png')]"
+          className="w-[26px] h-8 mx-3 bg-cover cursor-pointer bg-[url('@/overview/images/fire.png')]"
           onClick={handleClick}
         ></div>
         <Menu
@@ -149,7 +154,7 @@ export default function Overview({ children }: any) {
       >
         <h2 className="text-8xl z-10 flex items-center">
           U
-          <div className="w-[166px] h-[100px] bg-[url('layout/RootLayout/Overview/images/bud.png')] mx-2 bg-cover animate-bounce"></div>
+          <div className="w-[166px] h-[100px] bg-[url('@/overview/images/bud.png')] mx-2 bg-cover animate-bounce"></div>
           ING
         </h2>
       </div>
@@ -162,9 +167,12 @@ export default function Overview({ children }: any) {
           window.open("https://github.com/ubuding/React.Material", "_blank");
         }}
       >
-        <span className="text-yellow-500">React.Material</span>
+        <span className="text-yellow-500">
+          {" "}
+          {t("name")}.{t("ui.name")}
+        </span>
         <span className="mx-3">-</span>
-        <span> {t("introduction")}</span>
+        <span>{t("overview.introduction")}</span>
       </div>
       <div className="flex flex-wrap w-[580px] h-fit mt-5 mx-auto">
         {items.map((item) => {

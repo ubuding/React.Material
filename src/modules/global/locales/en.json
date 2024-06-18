@@ -1,9 +1,6 @@
 {
-  "introduction": "A complete front-end framework",
-  "operate": {
-    "query": "Query"
-  },
-  "form": {
-    "prev": "Previous"
+  "name": "React",
+  "ui": {
+    "name": "Material"
   }
 }

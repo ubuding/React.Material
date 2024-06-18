@@ -11,13 +11,16 @@ module.exports = (env) => {
       clean: true,
     },
     devServer: {
-      //   proxy: {
-      //     "/nrgtproxy": {
-      //       target: env.NO_REACT_PROXY,
-      //       pathRewrite: { "^/nrgtproxy": "" },
-      //       changeOrigin: true,
-      //     },
-      //   },
+      proxy: [
+        {
+          context: ["/oioweb"],
+          target: "https://api.oioweb.cn/",
+          ws: false,
+          secure: false,
+          changeOrigin: true,
+          pathRewrite: { "^/oioweb": "" },
+        },
+      ],
       static: [
         {
           directory: path.join(__dirname, "../public"),

@@ -14,14 +14,7 @@ body {
 @font-face {
   font-family: "Orbitron";
   font-style: normal;
-  src: url("/public/fonts/Orbitron-ExtraBold.ttf");
-}
-
-@font-face {
-  font-family: "Medium";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/public/fonts/Urbanist-Medium.ttf");
+  src: url("/public/fonts/Orbitron.ttf");
 }
 
 body {

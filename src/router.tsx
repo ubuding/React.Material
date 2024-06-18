@@ -8,10 +8,10 @@ const initWhitelist = () => {
   return modules.keys().flatMap((url: string) => modules(url).default);
 };
 const children = initWhitelist();
-// children.unshift({
-//   path: "/",
-//   element: <Navigate to="/robot" />,
-// });
+children.unshift({
+  path: "/",
+  element: <Navigate to="/overview" />,
+});
 const router = createHashRouter([
   {
     path: "/",
