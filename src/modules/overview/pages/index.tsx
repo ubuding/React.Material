@@ -14,7 +14,7 @@ export default function Overview() {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -103,7 +103,6 @@ export default function Overview() {
       maxWidth={false}
       className="w-lvw h-lvh flex flex-col overflow-hidden min-w-[900px] p-0 relative "
     >
-      {mxddd}
       <div className="h-fit mt-5 mr-3 flex flex-row-reverse items-center z-10">
         <div
           className="w-8 h-8 mx-3 bg-cover cursor-pointer bg-[url('@/overview/images/start.png')] animate-pulse"

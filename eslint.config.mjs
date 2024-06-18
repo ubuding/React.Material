@@ -13,4 +13,9 @@ export default [
     languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
   },
   ...fixupConfigRules(pluginReactConfig),
+  {
+    rules: {
+      "no-undef": 2,
+    },
+  },
 ];
