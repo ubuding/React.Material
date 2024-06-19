@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "webpack serve  -c .webpack --env development",
     "build": "webpack -c .webpack --env production",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "p": "yarn plop"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -53,6 +54,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "mini-css-extract-plugin": "^2.9.0",
+    "plop": "^4.0.1",
     "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
     "prettier": "^3.3.2",

@@ -11,9 +11,10 @@
     "paths": {
       "@/*": ["./src/modules/*"],
       "#/*": ["./src/components/*"],
-      "i18n": ["./src/i18n.ts"],
-      "style/*": ["./src/style/*"],
       "layout/*": ["./src/layout/*"],
+      "style/*": ["./src/style/*"],
+      "assets/*": ["./src/assets/*"],
+      "i18n": ["./src/i18n.ts"],
       "request": ["./src/request.ts"]
     },
     "types": ["node", "webpack-env"],

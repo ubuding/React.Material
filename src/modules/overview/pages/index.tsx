@@ -154,7 +154,7 @@ export default function Overview() {
       >
         <h2 className="text-8xl z-10 flex items-center">
           U
-          <div className="w-[166px] h-[100px] bg-[url('@/overview/images/bud.png')] mx-2 bg-cover animate-bounce"></div>
+          <div className="w-[166px] h-[100px] bg-[url('~assets/images/bud.png')] mx-2 bg-cover animate-bounce"></div>
           ING
         </h2>
       </div>
@@ -185,7 +185,7 @@ export default function Overview() {
               }}
             >
               <div
-                className="w-9 h-9 bg-contain bg-no-repeat bg-center rounded-full group-hover:animate-bounce-slow"
+                className="dd w-9 h-9 bg-contain bg-no-repeat bg-center rounded-full group-hover:animate-bounce-slow"
                 style={{
                   background: `url("/public/images/${item.icon}.png")`,
                 }}

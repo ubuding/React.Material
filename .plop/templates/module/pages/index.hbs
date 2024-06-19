@@ -1,0 +1,17 @@
+import React from "react";
+import Button from '@mui/material/Button';
+import { useTranslation } from "i18n";
+import {} from "@/{{lowerCase code}}/service";
+import { use{{properCase code}}Store } from "@/{{lowerCase code}}/store";
+export default function {{properCase code}}() {
+  const [t] = useTranslation();
+  const [count, setCount] = use{{properCase code}}Store("count");
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center">
+      <h2 className="mb-3">{t("{{lowerCase code}}.code")}</h2>
+      <Button variant="contained" onClick={() => setCount(count + 1)}>
+        {count}
+      </Button>
+    </div>
+  );
+}

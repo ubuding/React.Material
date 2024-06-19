@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -87,9 +88,10 @@ module.exports = (env) => {
       alias: {
         "@": path.resolve(__dirname, "../src/modules"),
         "#": path.resolve(__dirname, "../src/components"),
-        i18n: path.resolve(__dirname, "../src/i18n.ts"),
-        style: path.resolve(__dirname, "../src/style"),
         layout: path.resolve(__dirname, "../src/layout"),
+        style: path.resolve(__dirname, "../src/style"),
+        assets: path.resolve(__dirname, "../src/assets"),
+        i18n: path.resolve(__dirname, "../src/i18n.ts"),
         request: path.resolve(__dirname, "../src/request.ts"),
       },
     },
